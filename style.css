@@ -1,0 +1,719 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+}
+
+/* Header */
+.header {
+    background-color: white; /* Flipkart blue for the header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 20px;
+    color: white; /* Default text color for header items */
+    flex-wrap: wrap;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo-img {
+    height: 40px;
+}
+
+.search-box {
+    display: flex;
+    background: white; /* Search box background is white */
+    border-radius: 8px;
+    overflow: hidden;
+    width: 500px;
+    max-width: 100%;
+    box-shadow: 0 1px 2px rgba(153, 170, 196, 0.08);
+}
+
+.search-box input {
+    border: none;
+    padding: 8px 12px;
+    font-size: 18px;
+    width: 100%;
+    outline: none;
+    color: #333131;
+}
+
+.search-box button {
+    background: transparent; /* Button background transparent to blend with header */
+    border: none;
+    padding: 0 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box img {
+    width: 18px;
+}
+
+.header-right {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    color: rgb(14, 12, 12);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0 5px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.menu-item:hover {
+    background-color: rgba(0, 0, 0, 0.05); /* Subtle hover effect */
+    border-radius: 2px;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block; /* Essential for dropdown positioning */
+}
+
+/* The actual link that acts as the "Account" button */
+.account-link {
+    display: flex;
+    align-items: center;
+    color: rgb(17, 14, 14);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0 5px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.account-link img {
+    height: 20px;
+    width: 20px;
+    margin-right: 8px;
+}
+
+.account-link span {
+    margin-right: 5px;
+}
+
+.account-link .fa-chevron-down {
+    font-size: 10px;
+    transition: transform 0.2s ease; /* For rotation */
+}
+
+/* Dropdown button for "More" */
+.dropbtn {
+    background-color: transparent;
+    color: rgb(17, 14, 14);
+    padding: 0 5px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropbtn .fa-chevron-down {
+    font-size: 10px;
+    transition: transform 0.2s ease;
+}
+
+.dropbtn:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 2px;
+}
+
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    /* Position for the login dropdown, adjusted to align with the 'Login' text */
+    /* This might need fine-tuning based on actual header width and font rendering */
+    /* For 'Login' dropdown: align right edge of dropdown with right edge of parent dropdown container */
+    right: 0;
+    background-color: white;
+    color: black;
+    min-width: 240px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    border-radius: 2px;
+    padding: 8px 0;
+    white-space: nowrap;
+}
+
+/* Little arrow on top of dropdown */
+.dropdown-content::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    /* Adjust this 'right' value for the arrow to align with the login text */
+    /* This value depends on the width of the dropdown content and the trigger text. */
+    /* For the 'Login' dropdown, it should appear above the 'Login' word. */
+    right: 30px; /* Adjusted to try and match Flipkart's arrow position more closely */
+    transform: rotate(45deg);
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    box-shadow: -2px -2px 5px rgba(0,0,0,0.1);
+    z-index: 101;
+}
+
+/* For "More" dropdown, the arrow and content might need a different 'right' or 'left' */
+#moreDropdown .dropdown-content {
+    /* If "More" dropdown should align to the left of its button, use `left: 0;` */
+    left: 0;
+    right: auto; /* Override general dropdown-content right */
+}
+
+#moreDropdown .dropdown-content::before {
+    left: 30px; /* Adjust for "More" dropdown to align with "More" text */
+    right: auto; /* Override general dropdown-content right */
+}
+
+
+.dropdown-content a {
+    color: #212121;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 16px;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-content a .dropdown-icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 12px;
+    object-fit: contain;
+    /* Use filter to make them grey like Flipkart's icons */
+    filter: brightness(0.4);
+}
+
+.dropdown-content a:hover {
+    background-color: #f0f0f0;
+    color: #212121;
+}
+
+.dropdown-content a:hover .dropdown-icon {
+    filter: brightness(0.3);
+}
+
+/* Show dropdown on hover (for desktop) */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Rotate arrow on hover for 'Login' and 'More' */
+.dropdown:hover .account-link .fa-chevron-down,
+.dropdown:hover .dropbtn .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* Category Navigation */
+.category-nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    padding: 12px 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+    overflow-x: auto;
+}
+
+.category-col {
+    text-align: center;
+    width: 90px;
+    flex: 0 0 auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.category-col:hover {
+    transform: translateY(-3px);
+}
+
+.category-col img {
+    height: 64px;
+    margin-bottom: 6px;
+}
+
+.category-col p {
+    font-size: 13px;
+    color: #212121;
+    font-weight: 500;
+}
+
+/* Carousel */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 15px 0;
+    border-radius: 4px;
+}
+
+.carousel ul {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+    padding: 0;
+}
+
+.carousel li {
+    list-style: none;
+    flex: 0 0 100%;
+}
+
+.carousel img {
+    width: 100%;
+    display: block;
+    height: 250px;
+    object-fit: cover;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    border: none;
+    font-size: 30px;
+    padding: 6px 12px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-btn.left {
+    left: 0;
+    border-radius: 0 4px 4px 0;
+}
+
+.carousel-btn.right {
+    right: 0;
+    border-radius: 4px 0 0 4px;
+}
+
+/* Content Section (Product Grids) */
+.product-category-section {
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.category-block {
+  margin-bottom: 40px;
+}
+
+.category-block h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #212121;
+  margin-bottom: 16px;
+}
+
+.category-items-row {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  width: 140px;
+  text-align: center;
+}
+
+.item img {
+  width: 100%;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.item p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #212121;
+  margin-bottom: 4px;
+}
+
+.item span {
+  font-size: 13px;
+  color: #388e3c;
+  font-weight: 500;
+}
+
+.horizontal-categories {
+  padding: 20px;
+  background-color: #fff;
+}
+
+.category-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.category-box {
+  min-width: 300px;
+  flex: 0 0 auto;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  scroll-snap-align: start;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.category-box h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #212121;
+}
+
+.items-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: flex-start;
+}
+
+.card {
+  width: 200px;
+  text-align: center;
+  border: 1px solid #f0f0f0;
+  border-radius: 4px;
+  padding: 10px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card img {
+  width: 100%;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 13px;
+  font-weight: 500;
+  color: #212121;
+  margin-bottom: 4px;
+}
+
+.card span {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.green {
+  color: green;
+}
+
+.blue {
+  color: royalblue;
+}
+
+.teal {
+  color: teal;
+}
+
+.purple {
+  color: purple;
+}
+.monsoon-section {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.monsoon-left {
+  flex: 1;
+  min-width: 300px;
+}
+
+.monsoon-left h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.arrow {
+  font-size: 14px;
+  color: #2874f0;
+}
+
+.monsoon-items {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.monsoon-card {
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  transition: transform 0.2s;
+  background-color: #fafafa;
+}
+
+.monsoon-card:hover {
+  transform: scale(1.03);
+}
+
+.monsoon-card img {
+  width: 100%;
+  max-height: 100px;
+  object-fit: contain;
+}
+
+.monsoon-card p {
+  margin: 6px 0 2px;
+  font-weight: 500;
+}
+
+.green {
+  color: green;
+  font-size: 13px;
+}
+
+.monsoon-right {
+  flex: 1;
+  min-width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.monsoon-right img {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 4px;
+}
+.fashion-deals {
+  background-color: white;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.fashion-deals h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.fashion-row {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.fashion-card {
+  min-width: 180px;
+  border: 1px solid #e0e0e0;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  background-color: #fafafa;
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.fashion-card:hover {
+  transform: translateY(-3px);
+}
+
+.fashion-card img {
+  width: 100%;
+  height: 130px;
+  object-fit: contain;
+  margin-bottom: 6px;
+}
+
+.fashion-card p {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 4px 0;
+}
+
+.fashion-card .green {
+  color: green;
+  font-size: 13px;
+}
+
+
+/* Description */
+.description {
+    background-color: white;
+    padding: 20px;
+    margin: 20px 15px;
+    font-size: 14px;
+    color: #212121;
+    line-height: 1.6;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.description-subtxt1 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #212121;
+}
+
+/* Footer */
+
+.footer {
+  background-color: #0a0a0af3;
+  color: #fff;
+  padding: 40px 60px 20px;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+  margin: 10px 20px;
+}
+
+.footer-section h3 {
+  font-size: 14px;
+  color: #878787;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.footer-section p {
+  margin: 4px 0;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.footer-section .highlight {
+  color: #f1c40f;
+}
+
+.footer-section a {
+  color: #56a5eb;
+  text-decoration: none;
+}
+
+.social-icons i {
+  font-size: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  padding-top: 20px;
+}
+
+.footer-links span {
+  margin-right: 20px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.payment-icons img {
+  margin-right: 10px;
+  vertical-align: middle;
+  height: 24px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #404b5a;
+  margin: 20px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .header-right {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .category-nav {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .F-row-1 {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .offerrow {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+    .content, .description {
+        margin: 15px 10px;
+    }
+    footer {
+        padding: 20px;
+    }
+}
