@@ -45,13 +45,13 @@ flipkart-clone/
 
 1. Clone the repository:
    ```bash
-   
+   https://github.com/AKHILAPATILMP/FlipkartclonebyAkhila.git
 ````
 
 2. Navigate to the folder:
 
    ```bash
-   cd 
+   cd FlipkartclonebyAkhila
    ```
 3. Open `index.html` in your browser:
 
@@ -78,4 +78,4 @@ flipkart-clone/
 
 ## 🧑‍💻 Author
 
-* **Akhila Patil M P** – GitHub Profile : 
+* **Akhila Patil M P** – GitHub Profile : https://github.com/AKHILAPATILMP
