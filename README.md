@@ -78,4 +78,4 @@ flipkart-clone/
 
 ## 🧑‍💻 Author
 
-* **Akhila Patil M P** – GitHub Profile : https://github.com/AKHILAPATILMP
+* Akhila Patil M P – GitHub Profile : https://github.com/AKHILAPATILMP
