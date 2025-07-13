@@ -13,12 +13,12 @@ body {
 
 /* Header */
 .header {
-    background-color: white; /* Flipkart blue for the header */
+    background-color: white; 
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 18px 20px;
-    color: white; /* Default text color for header items */
+    color: white; 
     flex-wrap: wrap;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -29,7 +29,7 @@ body {
 
 .search-box {
     display: flex;
-    background: white; /* Search box background is white */
+    background: white; 
     border-radius: 8px;
     overflow: hidden;
     width: 500px;
@@ -47,7 +47,7 @@ body {
 }
 
 .search-box button {
-    background: transparent; /* Button background transparent to blend with header */
+    background: transparent; 
     border: none;
     padding: 0 10px;
     cursor: pointer;
@@ -78,17 +78,17 @@ body {
 }
 
 .menu-item:hover {
-    background-color: rgba(0, 0, 0, 0.05); /* Subtle hover effect */
+    background-color: rgba(0, 0, 0, 0.05); 
     border-radius: 2px;
 }
 
 /* Dropdown container */
 .dropdown {
     position: relative;
-    display: inline-block; /* Essential for dropdown positioning */
+    display: inline-block; 
 }
 
-/* The actual link that acts as the "Account" button */
+
 .account-link {
     display: flex;
     align-items: center;
@@ -113,7 +113,7 @@ body {
 
 .account-link .fa-chevron-down {
     font-size: 10px;
-    transition: transform 0.2s ease; /* For rotation */
+    transition: transform 0.2s ease; 
 }
 
 /* Dropdown button for "More" */
@@ -147,10 +147,7 @@ body {
     display: none;
     position: absolute;
     top: 100%;
-    /* Position for the login dropdown, adjusted to align with the 'Login' text */
-    /* This might need fine-tuning based on actual header width and font rendering */
-    /* For 'Login' dropdown: align right edge of dropdown with right edge of parent dropdown container */
-    right: 0;
+   right: 0;
     background-color: white;
     color: black;
     min-width: 240px;
@@ -166,10 +163,8 @@ body {
     content: '';
     position: absolute;
     bottom: 100%;
-    /* Adjust this 'right' value for the arrow to align with the login text */
-    /* This value depends on the width of the dropdown content and the trigger text. */
-    /* For the 'Login' dropdown, it should appear above the 'Login' word. */
-    right: 30px; /* Adjusted to try and match Flipkart's arrow position more closely */
+   
+    right: 30px; 
     transform: rotate(45deg);
     width: 10px;
     height: 10px;
@@ -178,16 +173,16 @@ body {
     z-index: 101;
 }
 
-/* For "More" dropdown, the arrow and content might need a different 'right' or 'left' */
+
 #moreDropdown .dropdown-content {
-    /* If "More" dropdown should align to the left of its button, use `left: 0;` */
+   
     left: 0;
-    right: auto; /* Override general dropdown-content right */
+    right: auto; 
 }
 
 #moreDropdown .dropdown-content::before {
-    left: 30px; /* Adjust for "More" dropdown to align with "More" text */
-    right: auto; /* Override general dropdown-content right */
+    left: 30px; 
+    right: auto; 
 }
 
 
@@ -206,7 +201,7 @@ body {
     height: 18px;
     margin-right: 12px;
     object-fit: contain;
-    /* Use filter to make them grey like Flipkart's icons */
+    
     filter: brightness(0.4);
 }
 
@@ -219,12 +214,12 @@ body {
     filter: brightness(0.3);
 }
 
-/* Show dropdown on hover (for desktop) */
+
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-/* Rotate arrow on hover for 'Login' and 'More' */
+
 .dropdown:hover .account-link .fa-chevron-down,
 .dropdown:hover .dropbtn .fa-chevron-down {
     transform: rotate(180deg);

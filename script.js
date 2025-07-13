@@ -1,4 +1,4 @@
-// Banner Carousel
+
 let currentIndex = 0;
 const carousel = document.querySelector('.carousel ul');
 const slides = document.querySelectorAll('.carousel li');
@@ -12,9 +12,9 @@ function slideCarousel(direction) {
 
 setInterval(() => {
   slideCarousel(1);
-}, 3000); // Auto-slide every 3 sec
+}, 3000);
 
-// Search Function
+
 document.getElementById("searchBtn").addEventListener("click", () => {
   const query = document.getElementById("productSearch").value.toLowerCase();
   const items = document.querySelectorAll(".offerrow > div");
@@ -26,7 +26,7 @@ document.getElementById("searchBtn").addEventListener("click", () => {
   });
 });
 
-// Redirect on button click
+
 document.getElementById("Top-Deals").addEventListener("click", () => {
   alert("Redirecting to Top Deals page... (link not implemented)");
 });
